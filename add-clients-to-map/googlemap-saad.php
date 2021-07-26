@@ -24,6 +24,20 @@
 
   */
 
+	require 'plugin-update-checker-master/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/manager-wiseTech/add-clients-to-map/',
+	__FILE__,
+	'add-clients-to-map'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
+//Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('your-token-here');
+
+
 
 
   // Hook for adding admin menus
